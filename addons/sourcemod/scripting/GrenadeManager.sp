@@ -2,9 +2,12 @@
 #include <sdktools>
 #include <zombiereloaded>
 
+#pragma semicolon 1
+#pragma newdecls required
+
 #pragma tabsize 0
 
-ConVar g_cvHePrice
+ConVar g_cvHePrice;
 ConVar g_cvSmokePrice;
 ConVar g_cvExtraSmoke;
 ConVar g_cvNadeEffect;
@@ -118,6 +121,7 @@ public Action GiveSmoke(Handle timer, int client)
 	{
 		GivePlayerItem(client, "weapon_smokegrenade");
 	}
+	return Plugin_Continue;
 }
 
 public void Event_RoundEnd(Event event, const char[] name, bool dontBroadcast)
